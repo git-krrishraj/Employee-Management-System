@@ -16,7 +16,7 @@ const AssignedTask = () => {
 
       <div className='w-full gap-3 h-80 overflow-auto flex flex-col'>
         {
-            data.employees.map((employee,idx) => {
+            data.userData.employees.map((employee,idx) => {
             console.log(employee)
              return <div className='w-full bg-slate-900 text-white flex justify-between h-16 shrink-0 items-center rounded-lg text-2xl' key={idx}>
               <h3 className='text-center w-[15%]'>{employee.name}</h3>

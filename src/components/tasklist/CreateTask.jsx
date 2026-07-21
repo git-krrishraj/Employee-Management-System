@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Context } from '../../context/ContextProvider'
+import AssignedTask from './AssignedTask'
 
 const CreateTask = () => {
   const data=useContext(Context)
@@ -7,27 +8,28 @@ const CreateTask = () => {
   const [taskDate, settaskDate] = useState('')
   const [assignTo, setassignTo] = useState('')
   const [taskDesc, settaskDesc] = useState('')
-  const [newTask, setnewTask] = useState({})
   const submitHandler=(e)=>{
     e.preventDefault()
-    const data=JSON.parse(localStorage.getItem('employees'))
+    const temp=JSON.parse(localStorage.getItem('employees'))
     console.log(data)
-    setnewTask({ active: false,
+    const newTask= { active: false,
         newTask: true,
         completed: false,
         failed: false,
         taskTitle: taskTitle,
         taskDescription: taskDesc,
         taskDate: taskDate,
-        category: "New Task",})
-      console.log(newTask)
-    data.forEach((elem) => {
+        category: "New Task",}
+    temp.forEach((elem) => {
       if(elem.name===assignTo)
       {
         elem.tasks.push(newTask)
+        elem.taskCounts.newTask++
       }
-    localStorage.setItem('employees',JSON.stringify(data))
     });
+  localStorage.setItem('employees',JSON.stringify(temp))
+  data.setuserData({employees:temp,admin:data.userData.admin})
+  alert(`New task assigned to ${assignTo}`)
   }
   return (
     <form onSubmit={(e)=>{
@@ -51,7 +53,7 @@ const CreateTask = () => {
             }} required>
               <option value='' disabled>Select the employee</option>
               {
-                data.employees.map((elem,idx)=>{
+                data.userData.employees.map((elem,idx)=>{
                   return <option value={`${elem.name}`} key={idx}>{elem.name}</option>
                 })
               }

@@ -12,7 +12,7 @@ const ContextProvider = ({children}) => {
   },[])
   return (
     <div>
-      <Context.Provider value={userData}>
+      <Context.Provider value={{userData:userData,setuserData:setuserData}}>
         {children}
       </Context.Provider>
       

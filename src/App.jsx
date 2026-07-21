@@ -13,28 +13,30 @@ import { Context } from './context/ContextProvider'
 function App() {
 
   const [currentUser, setcurrentUser] = useState(null)
-  const data=useContext(Context)
+  const [loggedIn, setloggedIn] = useState(JSON.parse(localStorage.getItem('loggedInUser')))
     useEffect(()=>{
     const loggedInUser=localStorage.getItem('loggedInUser')
     if(loggedInUser){
     setcurrentUser(JSON.parse(localStorage.getItem('loggedInUser')).role)
     }
-  },[data])
+  },[currentUser])
   const loginHandler=(email,password)=>{
-    if(data)
-    {
+   
+      const data={employees:JSON.parse(localStorage.getItem('employees')),admin:JSON.parse(localStorage.getItem('admin'))}
       let admin=data.admin.find(obj=>obj.email===email&&obj.password===password)
       let employees=data.employees.find(obj=>obj.email===email&&obj.password===password)
       if(admin)
       {
       console.log("This is an admin")
       localStorage.setItem('loggedInUser',JSON.stringify({role:'admin',data:admin}))
+      setloggedIn({role:'admin',data:admin})
       setcurrentUser('admin')
       }
       else if(employees)
       {
-      console.log('This is user')
+      console.log(employees)
       localStorage.setItem('loggedInUser',JSON.stringify({role:'employee',data:employees}))
+      setloggedIn({role:'employee',data:employees})
       setcurrentUser('employee')
       }
       else
@@ -42,18 +44,12 @@ function App() {
       alert("Inavlid Credentials")
       setcurrentUser(null)
       }
-    }
-    else
-    {
-      alert("Inavlid Credentials")
-      setcurrentUser(null)
-    }
   }
   return (
     <>
       {(!currentUser)?<Login loginHandler={loginHandler}/>:''}
-      {(currentUser==='employee')?<EmployeeDash data={JSON.parse(localStorage.getItem('loggedInUser')).data} setcurrentUser={setcurrentUser}/>:''}  
-      {(currentUser==='admin')?<AdminDash data={JSON.parse(localStorage.getItem('loggedInUser')).data} setcurrentUser={setcurrentUser}/>:''}
+      {(currentUser==='employee')?<EmployeeDash data={loggedIn.data} setloggedIn={setloggedIn} setcurrentUser={setcurrentUser}/>:''}  
+      {(currentUser==='admin')?<AdminDash data={loggedIn.data} setloggedIn={setloggedIn} setcurrentUser={setcurrentUser}/>:''}
 
     </>
   )
