@@ -29,7 +29,7 @@ const CompletedTask = ({userno,data,setloggedIn}) => {
 
     }
   return (
-    <div className='relative min-h-full w-100 bg-green-400 rounded-3xl shrink-0 p-6 flex flex-col gap-8 text-white'>
+    <div className='relative min-h-full w-100 bg-emerald-600 rounded-3xl shrink-0 p-6 flex flex-col gap-8 text-white'>
             <div className='flex justify-between items-center'>
                 <span className='text-2xl bg-orange-400 px-2 py-1 rounded-xl'>Completed</span>
                 <span className='text-xl'>{data.taskDate}</span>
@@ -43,7 +43,7 @@ const CompletedTask = ({userno,data,setloggedIn}) => {
                 </p>
             </div>
             <div className='absolute bottom-5 text-xl left-0 w-full box-border flex items-center justify-center h-5'>
-                <button className='bg-blue-400 px-4 py-1 rounded-full hover:scale-115 hover:bg-blue-700 hover:text-amber-50' onClick={completeHandler}>Delete</button>
+                <button className='bg-blue-600 px-4 py-1 rounded-full hover:scale-115 hover:bg-blue-700 hover:text-amber-50 transition-all' onClick={completeHandler}>Delete</button>
             </div>
         </div>
   )

@@ -27,14 +27,14 @@ function App() {
       let employees=data.employees.find(obj=>obj.email===email&&obj.password===password)
       if(admin)
       {
-      console.log("This is an admin")
+      
       localStorage.setItem('loggedInUser',JSON.stringify({role:'admin',data:admin}))
       setloggedIn({role:'admin',data:admin})
       setcurrentUser('admin')
       }
       else if(employees)
       {
-      console.log(employees)
+     
       localStorage.setItem('loggedInUser',JSON.stringify({role:'employee',data:employees}))
       setloggedIn({role:'employee',data:employees})
       setcurrentUser('employee')

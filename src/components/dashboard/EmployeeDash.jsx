@@ -6,7 +6,7 @@ import bg from '../../assets/bg.png'
 const EmployeeDash = ({data,setcurrentUser,setloggedIn}) => {
   
   return (
-    <div className='p-6' style={{ backgroundImage: `url(${bg})`}} >
+    <div className='p-6 min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-700' >
         <Header data={data} setcurrentUser={setcurrentUser} setloggedIn={setloggedIn}/>
         <Stats data={data} setloggedIn={setloggedIn}/>
         <TaskList userno={data.id} data={data} setloggedIn={setloggedIn}/>

@@ -7,7 +7,7 @@ const ContextProvider = ({children}) => {
   const [userData, setuserData] = useState(null)
   useEffect(()=>{
     const {employees,admin}=getLocalStorage()
-    console.log({employees,admin})
+
     setuserData({employees,admin})
   },[])
   return (

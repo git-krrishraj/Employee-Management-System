@@ -52,9 +52,9 @@ const ActiveTask = ({userno,data,setloggedIn}) => {
         context.setuserData({employees:updatedEmployees,admin:context.userData.admin})
     }
   return (
-    <div className='relative min-h-full w-100 bg-yellow-400 rounded-3xl shrink-0 p-6 flex flex-col gap-8 text-white'>
+    <div className='relative min-h-full w-100 bg-amber-500 rounded-3xl shrink-0 p-6 flex flex-col gap-8 text-white'>
             <div className='flex justify-between items-center'>
-                <span className='text-2xl bg-orange-400 px-2 py-1 rounded-xl'>Active</span>
+                <span className='text-2xl bg-orange-600 px-2 py-1 rounded-xl'>Active</span>
                 <span className='text-xl'>{data.taskDate}</span>
             </div>
             <div>
@@ -66,8 +66,8 @@ const ActiveTask = ({userno,data,setloggedIn}) => {
                 </p>
             </div>
             <div className='absolute bottom-5 text-xl left-0 w-full box-border flex items-center justify-evenly h-5'>
-                <button className="bg-red-400 hover:scale-110 hover:bg-red-700 px-3 py-1 rounded-full" onClick={failedHandler}>Mark as failed</button>
-                <button className="bg-green-400 hover:scale-110 hover:bg-green-700 px-3 py-1 rounded-full" onClick={completeHandler}>Mark as completed</button>
+                <button className="bg-rose-600 hover:scale-110 hover:bg-red-700 px-3 py-1 rounded-full transition-all" onClick={failedHandler}>Mark as failed</button>
+                <button className="bg-emerald-600 hover:scale-110 hover:bg-green-700 px-3 py-1 rounded-full transition-all" onClick={completeHandler}>Mark as completed</button>
             </div>
         </div>
   )

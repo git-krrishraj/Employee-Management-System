@@ -29,9 +29,9 @@ const NewTask = ({userno,data,setloggedIn}) => {
 
     }
     return (
-        <div className='relative min-h-full w-100 bg-blue-400 rounded-3xl shrink-0 p-6 flex flex-col gap-8 text-white'>
+        <div className='relative min-h-full w-100 bg-blue-600 rounded-3xl shrink-0 p-6 flex flex-col gap-8 text-white'>
             <div className='flex justify-between items-center'>
-                <span className='text-2xl bg-orange-400 px-2 py-1 rounded-xl'>New</span>
+                <span className='text-2xl bg-orange-600 px-2 py-1 rounded-xl'>New</span>
                 <span className='text-xl'>{data.taskDate}</span>
             </div>
             <div>
@@ -43,7 +43,7 @@ const NewTask = ({userno,data,setloggedIn}) => {
                 </p>
             </div>
             <div className='absolute bottom-5 text-xl left-0 w-full box-border flex items-center justify-center h-5'>
-                <button className='bg-green-400 px-4 py-1 rounded-full hover:scale-x-110 hover:bg-green-700 hover:text-amber-50' onClick={acceptHandler}>Accept Task</button>
+                <button className='bg-emerald-600 px-4 py-1 rounded-full hover:scale-x-110 hover:bg-green-700 hover:text-amber-50 transition-all' onClick={acceptHandler}>Accept Task</button>
             </div>
         </div>
     )
