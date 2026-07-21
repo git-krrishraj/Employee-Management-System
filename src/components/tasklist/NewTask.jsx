@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { Context } from '../../context/ContextProvider'
-const NewTask = ({userno,data,taskIndex,setloggedIn}) => {
+const NewTask = ({userno,data,setloggedIn}) => {
     const context = useContext(Context)
     const acceptHandler = () => {
         const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
         loggedInUser.data.taskCounts.active++
         loggedInUser.data.taskCounts.newTask--
         loggedInUser.data.tasks = loggedInUser.data.tasks.map((task, i) => {
-            if (i === taskIndex) {
+            if (task.id===data.id) {
                 return { ...task, active: true, newTask: false }
             }
             return task
@@ -20,8 +20,9 @@ const NewTask = ({userno,data,taskIndex,setloggedIn}) => {
             {
                 return loggedInUser.data
             }
-            else
+            else{
                 return elem
+            }
         })
         localStorage.setItem('employees',JSON.stringify(updatedEmployees))
         context.setuserData({employees:updatedEmployees,admin:context.userData.admin})

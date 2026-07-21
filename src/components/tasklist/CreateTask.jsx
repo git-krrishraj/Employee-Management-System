@@ -12,7 +12,9 @@ const CreateTask = () => {
     e.preventDefault()
     const temp=JSON.parse(localStorage.getItem('employees'))
     console.log(data)
-    const newTask= { active: false,
+    const newTask= { 
+        id : crypto.randomUUID(),
+        active: false,
         newTask: true,
         completed: false,
         failed: false,

@@ -10,15 +10,15 @@ const TaskList = ({userno,data,setloggedIn}) => {
     <div className=' h-90 mt-7 w-full flex gap-3.5 overflow-scroll'>
         {
             data.tasks.map((elem,idx)=>{
-                console.log(elem)
+                console.log(elem.id)
                 if(elem.active)
-                    return <ActiveTask key={userno*10+idx} userno={userno} data={elem} taskIndex={idx} setloggedIn={setloggedIn}/>
+                    return <ActiveTask key={elem.id} userno={userno} data={elem}  setloggedIn={setloggedIn}/>
                 else if(elem.newTask)
-                    return <NewTask key={userno*10+idx} userno={userno} data={elem} taskIndex={idx} setloggedIn={setloggedIn}/>
+                    return <NewTask key={elem.id} userno={userno} data={elem}  setloggedIn={setloggedIn}/>
                 else if(elem.completed)
-                    return <CompletedTask key={userno*10+idx} userno={userno}data={elem}  taskIndex={idx} setloggedIn={setloggedIn}/>
+                    return <CompletedTask key={elem.id} userno={userno}data={elem} setloggedIn={setloggedIn}/>
                 else
-                    return <FailedTask key={userno*10+idx} userno={userno} data={elem} taskIndex={idx} setloggedIn={setloggedIn}/>
+                    return <FailedTask key={elem.id} userno={userno} data={elem} setloggedIn={setloggedIn}/>
             })
         }
     </div>

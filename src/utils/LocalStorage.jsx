@@ -12,6 +12,7 @@ const employees = [
     },
     tasks: [
       {
+        id: "cb7ca1eb-39f0-43de-8f9d-a109e884c766",
         active: false,
         newTask: true,
         completed: false,
@@ -22,6 +23,7 @@ const employees = [
         category: "Design",
       },
       {
+        id: "029cee22-25a6-448f-88b0-1023ee51fb6a",
         active: false,
         newTask: true,
         completed: false,
@@ -32,6 +34,7 @@ const employees = [
         category: "Design",
       },
       {
+        id: "289ce3ff-0d65-41d7-b31c-85303f2edc05",
         active: false,
         newTask: false,
         completed: true,
@@ -57,6 +60,7 @@ const employees = [
     },
     tasks: [
       {
+        id: "cef51041-3664-4cb9-9d32-18542eab268f",
         active: false,
         newTask: true,
         completed: false,
@@ -67,6 +71,7 @@ const employees = [
         category: "Development",
       },
       {
+        id: "ce2cc4df-5fdb-4971-9264-978854795f35",
         active: false,
         newTask: false,
         completed: true,
@@ -77,6 +82,7 @@ const employees = [
         category: "Database",
       },
       {
+        id: "774cae50-9816-4768-b5ef-4c1b6f5b5ee9",
         active: false,
         newTask: false,
         completed: true,
@@ -102,6 +108,7 @@ const employees = [
     },
     tasks: [
       {
+        id: "3767ad5d-4364-4333-86a4-d336a3193199",
         active: false,
         newTask: true,
         completed: false,
@@ -112,6 +119,7 @@ const employees = [
         category: "Documentation",
       },
       {
+        id: "10dcca87-b4d5-49cb-bd04-859ef75509a2",
         active: false,
         newTask: false,
         completed: true,
@@ -122,6 +130,7 @@ const employees = [
         category: "Development",
       },
       {
+        id: "799ffdbc-ddb2-45a8-8632-0c492af02c5a",
         active: false,
         newTask: false,
         completed: false,
@@ -147,6 +156,7 @@ const employees = [
     },
     tasks: [
       {
+        id: "0ea015c8-d69b-463e-9c08-fbd2f0e1470a",
         active: false,
         newTask: false,
         completed: true,
@@ -157,6 +167,7 @@ const employees = [
         category: "Design",
       },
       {
+        id: "ec55cc4f-b206-4afa-826c-f27950590061",
         active: false,
         newTask: false,
         completed: true,
@@ -167,6 +178,7 @@ const employees = [
         category: "Security",
       },
       {
+        id: "8d800d3f-0437-4a3a-b8aa-9d3e60bc32cb",
         active: false,
         newTask: false,
         completed: false,
@@ -192,6 +204,7 @@ const employees = [
     },
     tasks: [
       {
+        id: "02eeb0f1-b2c4-438f-a780-bcbe001529a9",
         active: false,
         newTask: true,
         completed: false,
@@ -202,6 +215,7 @@ const employees = [
         category: "Presentation",
       },
       {
+        id: "8aba5328-6ce9-4eb4-979e-0ab936de371c",
         active: false,
         newTask: true,
         completed: false,
@@ -212,6 +226,7 @@ const employees = [
         category: "Finance",
       },
       {
+        id: "c29a92a9-1ca5-4291-8cc1-fabb57aace5d",
         active: false,
         newTask: true,
         completed: false,

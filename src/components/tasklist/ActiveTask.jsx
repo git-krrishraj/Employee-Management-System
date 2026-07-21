@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import { Context } from '../../context/ContextProvider'
 
-const ActiveTask = ({userno,data,taskIndex,setloggedIn}) => {
+const ActiveTask = ({userno,data,setloggedIn}) => {
     const context=useContext(Context)
     const failedHandler=()=>{
         const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
         loggedInUser.data.taskCounts.active--
         loggedInUser.data.taskCounts.failed++
         loggedInUser.data.tasks = loggedInUser.data.tasks.map((task, i) => {
-            if (i === taskIndex) {
+            if (task.id === data.id) {
                 return { ...task, active: false, failed: true }
             }
             return task
@@ -32,7 +32,7 @@ const ActiveTask = ({userno,data,taskIndex,setloggedIn}) => {
         loggedInUser.data.taskCounts.active--
         loggedInUser.data.taskCounts.completed++
         loggedInUser.data.tasks = loggedInUser.data.tasks.map((task, i) => {
-            if (i === taskIndex) {
+            if (task.id === data.id) {
                 return { ...task, active: false, completed:true }
             }
             return task
@@ -66,8 +66,8 @@ const ActiveTask = ({userno,data,taskIndex,setloggedIn}) => {
                 </p>
             </div>
             <div className='absolute bottom-5 text-xl left-0 w-full box-border flex items-center justify-evenly h-5'>
-                <button className="bg-red-400 px-3 py-1 rounded-full" onClick={failedHandler}>Mark as failed</button>
-                <button className="bg-green-400 px-3 py-1 rounded-full" onClick={completeHandler}>Mark as completed</button>
+                <button className="bg-red-400 hover:scale-110 hover:bg-red-700 px-3 py-1 rounded-full" onClick={failedHandler}>Mark as failed</button>
+                <button className="bg-green-400 hover:scale-110 hover:bg-green-700 px-3 py-1 rounded-full" onClick={completeHandler}>Mark as completed</button>
             </div>
         </div>
   )
